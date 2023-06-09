@@ -25,7 +25,7 @@ public class CreateUserParamTest {
             this.statusCode = statusCode;
             this.message = message;
         }
-        //test data
+
         @Parameterized.Parameters
         public static Object[][] getTestData(){
             return new Object[][]{

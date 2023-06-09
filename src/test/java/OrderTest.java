@@ -50,9 +50,9 @@ public class OrderTest {
         order.setIngredients(orderList);
         ValidatableResponse createOrder = orderClient.createOrderUnauthorizedUser(order);
         int actual = createOrder.log().all().extract().statusCode();
-        boolean isOrderCreated = createOrder.extract().path("success");
+        createOrder.extract().path("success");
         assertEquals("Status Code incorrect", SC_OK,actual);
-  //      assertTrue("Expected True", isOrderCreated);
+
     }
 
     @Test
@@ -81,7 +81,7 @@ public class OrderTest {
         Order order = new Order();
         List<String> orderList = new ArrayList<>(Arrays.asList("61c0c5a71d1f82001bdaaa6d", "61c0c5a71d1f82001bdaaa6f"));
         order.setIngredients(orderList);
-        ValidatableResponse createOrder = orderClient.createOrderAuthorizedUser(accessToken, order);
+        orderClient.createOrderAuthorizedUser(accessToken, order);
         ValidatableResponse getOrder = orderClient.getOrdersAuthorizedUser(accessToken, user);
         int actual = getOrder.extract().statusCode();
         boolean isOrdersDisplayed = getOrder.extract().path("success");

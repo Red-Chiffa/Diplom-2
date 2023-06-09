@@ -24,7 +24,7 @@ public class ChangeAuthUserDataTest {
 
     @Test
     public void authorizedUserChangeNameTest(){
-        ValidatableResponse responseCreate = userClient.createUser(user);
+        userClient.createUser(user);
         ValidatableResponse responseLogin = userClient.loginUser(Credentials.from(user));
         accessToken = responseLogin.extract().path("accessToken");
         String  userOldName = user.getName();
@@ -38,7 +38,7 @@ public class ChangeAuthUserDataTest {
     }
     @Test
     public void authorizedUserChangeEmailTest (){
-        ValidatableResponse responseCreate = userClient.createUser(user);
+        userClient.createUser(user);
         ValidatableResponse responseLogin = userClient.loginUser(Credentials.from(user));
         accessToken = responseLogin.extract().path("accessToken");
         String OldEmail =  user.getEmail();

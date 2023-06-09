@@ -1,5 +1,4 @@
 import io.restassured.response.ValidatableResponse;
-import org.example.URLS;
 import org.example.User;
 import org.example.UserClient;
 import org.example.UserGenerator;
@@ -7,7 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_FORBIDDEN;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
